@@ -1,0 +1,52 @@
+.logo {
+  margin-top: $space * 4;
+  width: 100%;
+  height: 143px;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  user-select: none;
+
+  .logo__inner {
+    display: flex;
+    justify-content: space-between;
+    width: 87.5%;
+    height: 100%;
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  @media screen and (max-width: $siteWidth) {
+    height: 100px;
+  }
+
+  @media screen and (max-width: $smallScreen) {
+    height: 95px;
+
+    .logo__inner {
+      width: 95%;
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    height: 65px;
+  }
+
+  @media screen and (max-width: $mobileSmall) {
+    height: 55px;
+  }
+}
+
+.logo-bar {
+  width: 100%;
+  height: 100px;
+  //background: $backgroundFooter;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}

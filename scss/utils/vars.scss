@@ -1,0 +1,39 @@
+// colour
+$black: #131313;
+$white: #fff;
+$grey: #ececec;
+$colour: $black;
+$blue: #8080ff;
+$cyan: #80ffff;
+$magenta: #ff00ff;
+$colourLink: $blue;
+$background: #ececec;
+//$background: yellow;
+//$background: linear-gradient(to top, $blue 12.5%, $cyan 50%, $blue 87.5%);
+//$backgroundFooter: linear-gradient(180deg, $cyan 0%, $blue 25%, $cyan 100%);
+$backgroundFooter: linear-gradient(180deg, $grey 0%, $white 25%, $black 100%);
+
+// size
+$space: 8px;
+$heightFooter: 200px;
+
+// style
+$border: 1px solid $black;
+$textShadow: 0px 0px 8px rgba($white, 1);
+
+// breakpoints
+$siteWidth: 1160px;
+$tablet: 1024px;
+$smallScreen: 960px;
+$mobile: 768px;
+$mobileSmall: 480px;
+
+// index
+$indexNav: 50;
+$indexCanvas: 100;
+$indexLoading: 200;
+
+// animation
+$transition: 0.35s;
+$transitionMedium: 0.5s;
+$transitionSlow: 1s;

@@ -121,12 +121,6 @@
     }
   }
 
-  &.editable {
-    .overlay__controls {
-      display: flex;
-    }
-  }
-
   @media screen and (max-width: $mobile) {
     .overlay__inner {
       .overlay__controls {
@@ -168,7 +162,7 @@
         }
 
         .overlay__mobile {
-          display: block;
+          display: none;
           position: fixed;
           bottom: 0;
           left: 50%;
@@ -193,6 +187,20 @@
           }
         }
       }
+    }
+
+    &.editable {
+      .overlay__controls {
+        .overlay__mobile {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &.editable {
+    .overlay__controls {
+      display: flex;
     }
   }
 }

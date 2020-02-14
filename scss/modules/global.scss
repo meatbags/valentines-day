@@ -4,6 +4,8 @@ div, * {
 }
 
 html {
+	overflow-x: hidden;
+	overflow: hidden;
 	touch-action: manipulation;
 }
 
@@ -11,10 +13,13 @@ html, body {
 	margin: 0;
 	padding: 0;
 	width: 100%;
+	overflow-x: hidden;
 	overflow: hidden;
 }
 
 body {
+	width: 100%;
+	overflow-x: hidden;
 	font-family: $fontStack;
 	font-size: $fontSize;
 	line-height: $lineHeight;
@@ -28,4 +33,9 @@ body {
 
 a {
 	color: $colourLink;
+}
+
+::selection {
+    background-color: $colour;
+    color: $colourLight;
 }

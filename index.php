@@ -6,6 +6,8 @@ $card = isset($_GET['ref']) ? getCard($_GET['ref']) : null;
 $editable = $card === null;
 $text = $editable ? 'your message' : htmlspecialchars($card['card_text']);
 $text = str_replace('&amp;lt;br&amp;gt;', '<br />', $text);
+$text = str_replace('&amp;lt;', '&lt;', $text);
+$text = str_replace('&amp;gt;', '&gt;', $text);
 $token = $editable ? getCardToken() : $card['card_token'];
 $baseUrl = ENV === 'DEV' ? 'http://localhost/valentines-day/' : 'https://www.valentinesday.dev/';
 $url = $baseUrl . '?ref=' . $token;
@@ -48,8 +50,9 @@ $colourStem = $editable ? "#060" : htmlspecialchars($card['card_colour_stem']);
               <div class='button'>
                 <a target='_blank' href='<?php echo $url; ?>'>PREVIEW</a>
               </div>
-              <div id='button-copy-url' class='button'>
-                <i class="material-icons">file_copy</i>&nbsp;COPY LINK</div>
+              <div id='button-copy-url' data-clipboard-target="#url-target" class='button'>
+                <i class="material-icons">file_copy</i>&nbsp;COPY LINK
+              </div>
             </div>
           </div>
         </div>

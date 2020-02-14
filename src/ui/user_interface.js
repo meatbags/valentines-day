@@ -32,6 +32,9 @@ class UserInterface {
     this.el.target.colourText = document.querySelector('#card-message');
     this.el.target.url = document.querySelector('#url-target');
 
+    // clipboard
+    this.clipboardJS = new ClipboardJS('#button-copy-url');
+
     // set initial colours
     this.setColours();
 
@@ -187,6 +190,7 @@ class UserInterface {
   }
 
   copyLinkToClipboard() {
+    /*
     const el = document.createElement('textarea');
     const url = this.el.target.url.innerText;
     console.log('URL:', url);
@@ -196,6 +200,7 @@ class UserInterface {
     el.select();
     document.execCommand('copy');
     document.body.removeChild(el);
+    */
     this.inputAlert(this.el.button.copyUrl, {msg: 'Link copied to clipboard'});
   }
 }

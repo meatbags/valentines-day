@@ -12,7 +12,7 @@ class Materials {
     this.mat.neon = new THREE.MeshPhysicalMaterial({emissive: 0xffffff, emissiveIntensity: 1.0});
 
     // apply default envmap
-    this.envMap = this.createEnvMap('project/default/envmap');
+    this.envMap = this.createEnvMap('assets/envmap');
     this.envMapIntensity = 0.5;
     Object.keys(this.mat).forEach(key => {
       if (this.mat[key].type && this.mat[key].type === 'MeshPhysicalMaterial') {

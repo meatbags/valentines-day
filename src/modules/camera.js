@@ -31,8 +31,9 @@ class Camera {
   }
 
   resize() {
-    const size = this.ref.projectHandler.getSize();
-    this.camera.aspect = size.x / size.y;
+    const x = window.innerWidth;
+    const y = window.innerHeight;
+    this.camera.aspect = x / y;
     this.camera.updateProjectionMatrix();
   }
 

@@ -8,6 +8,7 @@ import Loop from './modules/loop';
 import Materials from './modules/materials';
 import Renderer from './modules/renderer';
 import Scene from './modules/scene';
+import UserInterface from './ui/user_interface';
 
 class App {
   constructor() {
@@ -19,6 +20,7 @@ class App {
       materials: new Materials(),
       renderer: new Renderer(),
       scene: new Scene(),
+      userInterface: new UserInterface(),
     };
 
     // bind modules
@@ -29,8 +31,8 @@ class App {
     });
 
     // start
-    this.target = null;
     this.modules.loading.hide();
+    this.modules.loop.start();
   }
 
   resize() {
@@ -44,5 +46,6 @@ class App {
 }
 
 window.onload = () => {
+  console.log('This project is open source: https://github.com/meatbags/valentines-day');
   const app = new App();
 };

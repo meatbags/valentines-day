@@ -4,7 +4,7 @@ import '../glsl';
 
 class Renderer {
   constructor() {
-    this.renderer = new THREE.WebGLRenderer({antialias: false});
+    this.renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
     this.renderer.setClearColor(0x0, 0.1);
     this.renderer.gammaInput = true;
     this.renderer.gammaOutput = true;

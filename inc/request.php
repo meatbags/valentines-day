@@ -6,7 +6,7 @@ class Request {
   public $error;
 
   function __construct() {
-    $this->conn = new mysqli(MBC_DB_HOST, MBC_DB_USERNAME, MBC_DB_PASSWORD, MBC_DB_NAME);
+    $this->conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
     $this->error = $this->conn->connect_errno;
   }
 

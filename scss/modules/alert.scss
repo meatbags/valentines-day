@@ -1,0 +1,28 @@
+.alert {
+  position: fixed;
+  background: $white;
+  color: $colour;
+  transform: translate(-$space, -50%);
+  z-index: $indexAlert;
+  font-size: 12px;
+  font-family: $fontStackSerif;
+  transition: $transition;
+  opacity: 0;
+  @include padding(1.5, 1.25);
+  border-radius: $space * 3;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &.active {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+
+  @media screen and (max-width: $mobile) {
+    top: 0 !important;
+    left: 50% !important;
+    transform: translate(-50%, $space) !important;
+    font-size: $fontSize;
+    white-space: nowrap;
+  }
+}

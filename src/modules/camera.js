@@ -3,11 +3,12 @@
 class Camera {
   constructor(root) {
     this.offset = 0.1;
-    this.camera = new THREE.PerspectiveCamera(65, 1, 0.1, 2000000);
+    this.camera = new THREE.PerspectiveCamera(60, 1, 0.1, 2000000);
     this.camera.up = new THREE.Vector3(0, 1, 0);
     this.camera.rotation.order = 'YXZ';
-    this.camera.position.set(10, 10, 10);
-    this.camera.lookAt(new THREE.Vector3());
+    this.camera.position.set(5, 0, 5);
+    this.target = new THREE.Vector3(0, 0, 0);
+    this.age = 0;
   }
 
   bind(root) {
@@ -20,16 +21,6 @@ class Camera {
     });
   }
 
-  set(params) {
-    this.camera.fov = params.fov || 65;
-    this.camera.updateProjectionMatrix();
-  }
-
-  addAudioListener() {
-    this.listener = new THREE.AudioListener();
-    this.camera.add(this.listener);
-  }
-
   resize() {
     const x = window.innerWidth;
     const y = window.innerHeight;
@@ -37,7 +28,12 @@ class Camera {
     this.camera.updateProjectionMatrix();
   }
 
-  update(delta) {}
+  update(delta) {
+    this.age += delta;
+    const t = this.age * 0.25;
+    this.camera.position.y = 5 + Math.sin(t) * 1;
+    this.camera.lookAt(this.target);
+  }
 }
 
 export default Camera;

@@ -1,56 +1,35 @@
-.loading-screen {
+@keyframes anim-heart {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.loading {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: $indexLoading;
-  background: $black;
-  pointer-events: none;
+  background: $white;
   transition: $transitionMedium;
-  user-select: none;
-  overflow: hidden;
+  transition-delay: $transitionMedium;
+  pointer-events: none;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  .loading-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200px;
-    height: 200px;
-    transition: $transitionMedium;
-    transform: translate(-50%, -50%);
-
-    img {
-      width: 100%;
-      height: auto;
-    }
+  .loading__inner {
+    color: $black;
+    font-size: $fontSizeMedium;
+    opacity: 0;
+    animation-name: anim-heart;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
   }
 
-  &[data-state="0"] {
-    transform: translate(0, 100%);
-
-    .loading-icon {
-      transform: translate(-50%, calc(-50% - 80vh));
-      opacity: 0;
-    }
-  }
-
-  &[data-state="1"] {
-    pointer-events: all;
-    transform: translate(0, 0);
-
-    .loading-icon {
-      transform: translate(-50%, -50%);
-      opacity: 1;
-    }
-  }
-
-  &[data-state="2"] {
-    transform: translate(0, -100%);
-
-    .loading-icon {
-      transform: translate(-50%, calc(-50% + 80vh));
-      opacity: 0;
-    }
+  &.active {
+    opacity: 1;
   }
 }

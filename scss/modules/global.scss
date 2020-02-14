@@ -5,26 +5,13 @@ div, * {
 
 html {
 	touch-action: manipulation;
-
-	&.freeze {
-		position: fixed;
-		//overflow-y: scroll;
-    width: 100%;
-		height: 100%;
-		touch-action: none;
-		//overscroll-behavior-y: none;
-
-		body {
-			//overscroll-behavior-y: none;
-			touch-action: none;
-		}
-	}
 }
 
 html, body {
 	margin: 0;
 	padding: 0;
 	width: 100%;
+	overflow: hidden;
 }
 
 body {

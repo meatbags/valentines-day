@@ -23,26 +23,17 @@ class Loop {
 
     // doc targets
     this.el = {};
-    this.el.wrapper = document.querySelector('.wrapper');
-    this.el.canvasWrapper = document.querySelector('.canvas-wrapper');
     this.now = performance.now();
     this.loop();
   }
 
-  pause() {
-    this.active = false;
-  }
-
-  hide() {
-    this.pause();
-    this.el.wrapper.classList.remove('docked');
-    this.el.canvasWrapper.classList.remove('active');  }
-
-  resume() {
-    this.el.wrapper.classList.add('docked');
-    this.el.canvasWrapper.classList.add('active');
+  start() {
     this.now = performance.now();
     this.active = true;
+  }
+
+  stop() {
+    this.active = false;
   }
 
   loop() {
